@@ -18,9 +18,14 @@ def get_long_description():
     return '\n\n'.join(descr)
 
 
+def flytrex_version(version):
+    delimiter = "." if "+" in version else "+"
+    return f"{version}{delimiter}flytrex-1"
+
+
 setup(
     name='pycodestyle',
-    version=get_version(),
+    version=flytrex_version(get_version()),
     description="Python style guide checker",
     long_description=get_long_description(),
     keywords='pycodestyle, pep8, PEP 8, PEP-8, PEP8',
@@ -65,6 +70,6 @@ setup(
     ],
     project_urls={
         'Changes':
-        'https://pycodestyle.pycqa.org/en/latest/developer.html#changes',
+            'https://pycodestyle.pycqa.org/en/latest/developer.html#changes',
     },
 )
